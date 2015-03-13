@@ -13,7 +13,6 @@ lein do \
   with-profile win32.win32.x86_64 install, \
   with-profile gtk.linux.x86 install, \
   with-profile gtk.linux.x86_64 install, \
-  with-profile win32.win32.x86_64 install, \
   with-profile cocoa.macosx install, \
   with-profile cocoa.macosx.x86_64 install  
 ```
@@ -26,7 +25,6 @@ lein do \
   with-profile win32.win32.x86_64 deploy clojars, \
   with-profile gtk.linux.x86 deploy clojars, \
   with-profile gtk.linux.x86_64 deploy clojars, \
-  with-profile win32.win32.x86_64 deploy clojars, \
   with-profile cocoa.macosx deploy clojars, \
   with-profile cocoa.macosx.x86_64 deploy clojars  
 ```
