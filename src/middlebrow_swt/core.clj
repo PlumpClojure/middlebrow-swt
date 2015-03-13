@@ -33,8 +33,6 @@
 
 (defrecord SWTBrowser [shell browser call-type state]
   IBrowser
-  (container [self] :swt)
-
   (show [self]
     (call call-type state
       (.open shell)))
@@ -180,11 +178,12 @@
           (handleEvent [e]
             (handler {:event e}))))))
 
-  ISWTBrowser
-  (start-ui-loop [self]
-    (start-ui-loop self nil))
+  (container-type [self] :swt)
 
-  (start-ui-loop [self error-fn]
+  (start-event-loop [self]
+    (start-event-loop self nil))
+
+  (start-event-loop [self error-fn]
     (swap! state assoc :loop-started true)
     (let [display (Display/getDefault)]
       (while (not (.isDisposed shell))
